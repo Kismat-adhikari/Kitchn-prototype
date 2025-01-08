@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .recipe-header {
+            position: relative;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .recipe-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .recipe-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            background: linear-gradient(to top, rgba(28, 28, 28, 0.9), transparent);
+        }
+        
+        .recipe-title {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            gap: 20px;
+            color: #f46464;
+            font-size: 16px;
+        }
+        
+        .recipe-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .recipe-main {
+            background: linear-gradient(145deg, #262626, #1f1f1f);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-title {
+            color: #f46464;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .ingredients-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .ingredients-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ingredients-list li::before {
+            content: "•";
+            color: #f46464;
+        }
+        
+        .recipe-sidebar {
+            background: linear-gradient(145deg, #262626, #1f1f1f);
+            padding: 30px;
+            border-radius: 20px;
+            height: fit-content;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(28, 28, 28, 0.5);
+            border-radius: 10px;
+        }
+        
+        .info-label {
+            color: #f46464;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .info-value {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .like-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(145deg, #f46464, #ff7676);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .like-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 100, 100, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .recipe-content {
+                grid-template-columns: 1fr;
+            }
+            .recipe-header {
+                height: 300px;
+            }
+            .recipe-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="recipe-header">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Perfect Grilled Steak" class="recipe-image">
+            <div class="recipe-overlay">
+                <h1 class="recipe-title">Perfect Grilled Steak</h1>
+                <div class="recipe-meta">
+                    <span>By John Doe</span>
+                    <span>Posted 2 days ago</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-content">
+            <div class="recipe-main">
+                <h2 class="section-title">Ingredients</h2>
+                <ul class="ingredients-list">
+                    <li>2 ribeye steaks (1-inch thick)</li>
+                    <li>2 tablespoons olive oil</li>
+                    <li>4 cloves garlic, minced</li>
+                    <li>Fresh rosemary and thyme</li>
+                    <li>Salt and black pepper to taste</li>
+                    <li>2 tablespoons butter</li>
+                </ul>
+
+                <h2 class="section-title">Instructions</h2>
+                <div class="instructions">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">
+                        1. Remove steaks from refrigerator 30 minutes before cooking to reach room temperature.
+                    </p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">
+                        2. Season both sides generously with salt and pepper.
+                    </p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">
+                        3. Heat grill or pan to high heat. Add olive oil.
+                    </p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">
+                        4. Cook steaks for 4-5 minutes on each side for medium-rare.
+                    </p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">
+                        5. Add butter, garlic, and herbs in the last minute.
+                    </p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">
+                        6. Let rest for 5-10 minutes before serving.
+                    </p>
+                </div>
+            </div>
+
+            <div class="recipe-sidebar">
+                <h2 class="section-title">Recipe Info</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Prep Time</div>
+                        <div class="info-value">10 mins</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Cook Time</div>
+                        <div class="info-value">15 mins</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Servings</div>
+                        <div class="info-value">2</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Difficulty</div>
+                        <div class="info-value">Medium</div>
+                    </div>
+                </div>
+
+                <button class="like-button">
+                    <span>❤️</span>
+                    <span>Like Recipe (128)</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple xa ill maek it better bholi
+        const likeButton = document.querySelector('.like-button');
+        let likes = 128;
+
+        likeButton.addEventListener('click', () => {
+            likes++;
+            likeButton.querySelector('span:last-child').textContent = `Like Recipe (${likes})`;
+        });
+    </script>
+</body>
+
+</html>
