@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Recipe</title>
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Logo</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Cooks</a>
+                <a href="#">Post</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Form Section (EXAMPLE)-->
+        <section class="form-section">
+            <form class="form-container">
+                <h1 class="form-title">Share Your Recipe</h1>
+
+                <div class="form-group">
+                    <label for="image">Food Image</label>
+                    <label for="image" class="file-upload-btn">Choose Image</label>
+                    <input type="file" id="image" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="foodName">Food Name</label>
+                    <input type="text" id="foodName" placeholder="Enter the name of your dish" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ingredients">Ingredients</label>
+                    <textarea id="ingredients" rows="4" placeholder="List your ingredients here" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="cookTime">Cooking Time (minutes)</label>
+                    <input type="number" id="cookTime" placeholder="How long does it take to cook?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="servings">Number of Servings</label>
+                    <input type="number" id="servings" placeholder="How many people does it serve?" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Share Recipe</button>
+            </form>
+        </section>
+
+        <!-- Feed Preview (EXAMPLE) -->
+        <section class="feed-preview">
+            <h2 class="feed-title">Latest Recipes</h2>
+
+            <!-- Recipe for card 1 -->
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Fresh Salad" class="recipe-image">
+                <div class="recipe-content">
+                    <h3 class="recipe-name">Perfect Grilled Steak</h3>
+                    <div class="recipe-info">
+                        <span>⏰ 25 mins</span>
+                        <span>👥 4 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="recipe-detail.html" class="view-btn">View Recipe</a>
+                        <div class="like-count">
+                            <span>❤️</span>
+                            <span>128</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe for card 2-->
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Grilled Steak" class="recipe-image">
+                <div class="recipe-content">
+                    <h3 class="recipe-name">Mediterranean Salad</h3>
+                    <div class="recipe-info">
+                        <span>⏰ 15 mins</span>
+                        <span>👥 2 servings</span>
+                    </div>
+                    <div class="recipe-actions">
+                        <a href="recipe-detail.html" class="view-btn">View Recipe</a>
+                        <div class="like-count">
+                            <span>❤️</span>
+                            <span>95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/navbar.js"></script>
+</body>
+
+</html>
