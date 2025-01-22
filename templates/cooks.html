@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+
+    <title>User Profiles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #1c1c1c;
+            min-height: 100vh;
+        }
+        /* Profile cards styles */
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .page-title {
+            color: #f46464;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-card {
+            background-color: #2c2c2c;
+            border: 1px solid rgba(244, 100, 100, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            border-color: rgba(244, 100, 100, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #f46464;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            flex-grow: 1;
+        }
+        
+        .profile-name {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-role {
+            color: #f46464;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .profile-description {
+            color: #cccccc;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 16px;
+            font-size: 0.875rem;
+            color: white;
+            background-color: #f46464;
+        }
+        
+        .tag.chef {
+            background-color: #f46464;
+        }
+        
+        .tag.baker {
+            background-color: #f4a261;
+        }
+        
+        .tag.butcher {
+            background-color: #9b5de5;
+        }
+        
+        .tag.pastry {
+            background-color: #ff6b6b;
+        }
+        
+        .tag.specialist {
+            background-color: #4361ee;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-card {
+                flex-direction: column;
+            }
+            .profile-image {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Logo</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="cooks.html">Cooks</a>
+                <a href="#">Post</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Our Users</h1>
+        <div class="profiles-container">
+            <!-- Profile cards wile shown here in the page-->
+        </div>
+    </div>
+
+    <script>
+        // Updated user data with image links this will be chaangd paxi using python the data will be inesrted accrodignly.
+        const users = [{
+            name: "Sarah Johnson",
+            role: "Executive Chef",
+            tags: ["chef", "pastry"],
+            image: "https://randomuser.me/api/portraits/women/1.jpg",
+            description: "Specializes in French cuisine with 15 years of experience in Michelin-starred restaurants."
+        }, {
+            name: "Michael Chen",
+            role: "Master Baker",
+            tags: ["baker", "specialist"],
+            image: "https://randomuser.me/api/portraits/men/2.jpg",
+            description: "Artisan bread specialist with focus on traditional sourdough and experimental flavors."
+        }, {
+            name: "Robert Smith",
+            role: "Head Butcher",
+            tags: ["butcher", "specialist"],
+            image: "https://randomuser.me/api/portraits/men/3.jpg",
+            description: "Expert in premium cuts and sustainable meat practices with 20 years of experience."
+        }, {
+            name: "Emma Davis",
+            role: "Pastry Chef",
+            tags: ["pastry", "chef"],
+            image: "https://randomuser.me/api/portraits/women/4.jpg",
+            description: "Award-winning dessert creator specializing in French pastries and chocolate work."
+        }];
+
+        // Function to create profile cards
+        function createProfileCards() {
+            const container = document.querySelector('.profiles-container');
+
+            users.forEach(user => {
+                        const card = document.createElement('div');
+                        card.className = 'profile-card';
+
+                        card.innerHTML = `
+                    <img src="${user.image}" alt="${user.name}" class="profile-image">
+                    <div class="profile-info">
+                        <h2 class="profile-name">${user.name}</h2>
+                        <div class="profile-role">${user.role}</div>
+                        <p class="profile-description">${user.description}</p>
+                        <div class="tags">
+                            ${user.tags.map(tag => `<span class="tag ${tag}">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+    
+                container.appendChild(card);
+            });
+        }
+    
+        // Initialize the page with this
+        document.addEventListener('DOMContentLoaded', createProfileCards);
+    </script>
+
+
+    <!-- navbar ko link -->
+    <script src="/static/js/navbar.js"></script>
+
+
+
+</body>
+
+</html>

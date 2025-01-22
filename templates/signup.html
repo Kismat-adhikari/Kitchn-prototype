@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookBook - Create Account</title>
+
+    <!-- the styling for sinup page -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #1c1c1c;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            width: 100%;
+            gap: 40px;
+            padding: 20px;
+        }
+        
+        .brand-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .brand-name {
+            color: #f46464;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            color: #ffffff;
+            font-size: 1.75rem;
+            line-height: 1.3;
+        }
+        
+        .signup-card {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(244, 100, 100, 0.1);
+            width: 460px;
+        }
+        
+        .name-fields {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(244, 100, 100, 0.2);
+            background-color: #1c1c1c;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #f46464;
+        }
+        
+        .input-field::placeholder {
+            color: #888;
+        }
+        
+        select.input-field {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f46464' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+            padding-right: 2.5rem;
+        }
+        
+        .form-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .signup-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #f46464;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 16px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .signup-btn:hover {
+            background-color: #d45555;
+        }
+        
+        .login-link {
+            text-align: center;
+            margin: 16px 0;
+            color: #888;
+        }
+        
+        .login-link a {
+            color: #f46464;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .field-label {
+            color: #fff;
+            margin-bottom: 6px;
+            display: block;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .brand-section {
+                padding-right: 0;
+            }
+            .brand-name {
+                font-size: 3rem;
+            }
+            .signup-card {
+                width: 100%;
+                max-width: 460px;
+            }
+            .name-fields {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- container fo signup -->
+    <div class="container">
+        <div class="brand-section">
+            <h1 class="brand-name">cookbook</h1>
+            <h2 class="tagline">Join our community of food enthusiasts and share your culinary journey.</h2>
+        </div>
+
+        <div class="signup-card">
+            <h3 class="form-title">Create your account</h3>
+            <form>
+                <div class="name-fields">
+                    <div>
+                        <label class="field-label">First Name</label>
+                        <input type="text" class="input-field" placeholder="First name" required>
+                    </div>
+                    <div>
+                        <label class="field-label">Last Name</label>
+                        <input type="text" class="input-field" placeholder="Last name" required>
+                    </div>
+                </div>
+
+                <label class="field-label">Email Address</label>
+                <input type="email" class="input-field" placeholder="Enter your email" required>
+
+                <label class="field-label">Cooking Specialty</label>
+                <select class="input-field" required>
+                    <option value="" disabled selected>Select your specialty</option>
+                    <option value="chef">Professional Chef</option>
+                    <option value="pastry">Pastry Chef</option>
+                    <option value="baker">Baker</option>
+                    <option value="butcher">Butcher</option>
+                    <option value="home">Home Cook</option>
+                    <option value="bbq">BBQ Specialist</option>
+                    <option value="vegetarian">Vegetarian Specialist</option>
+                    <option value="asian">Asian Cuisine Specialist</option>
+                    <option value="european">European Cuisine Specialist</option>
+                </select>
+
+                <label class="field-label">Experience Level</label>
+                <select class="input-field" required>
+                    <option value="" disabled selected>Select your experience</option>
+                    <option value="less">Less than a year</option>
+                    <option value="1">1 year</option>
+                    <option value="2">2 years</option>
+                    <option value="3">3-5 years</option>
+                    <option value="5">5-10 years</option>
+                    <option value="10">10+ years</option>
+                </select>
+
+                <label class="field-label">Password</label>
+                <input type="password" class="input-field" placeholder="Create a password" required>
+
+                <button type="submit" class="signup-btn">Create Account</button>
+
+                <div class="login-link">
+                    Already have an account? <a href="login.html">Log In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>
